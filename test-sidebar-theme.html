@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Theme Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-content {
+            margin-top: 100px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+        }
+        .test-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .test-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: var(--accent-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <defs>
+                            <linearGradient id="BG1" x1="100%" x2="50%" y1="9.946%" y2="50%">
+                                <stop offset="0%" stop-color="#007867"></stop>
+                                <stop offset="100%" stop-color="#00A76F"></stop>
+                            </linearGradient>
+                        </defs>
+                        <g fill="#00A76F" fill-rule="evenodd">
+                            <path fill="url(#BG1)" d="M183.168 285.573l-2.918 5.298-2.973 5.363-2.846 5.095-2.274 4.043-2.186 3.857-2.506 4.383-1.6 2.774-2.294 3.939-1.099 1.869-1.416 2.388-1.025 1.713-1.317 2.18-.95 1.558-1.514 2.447-.866 1.38-.833 1.312-.802 1.246-.77 1.18-.739 1.111-.935 1.38-.664.956-.425.6-.41.572-.59.8-.376.497-.537.69-.171.214c-10.76 13.37-22.496 23.493-36.93 29.334-30.346 14.262-68.07 14.929-97.202-2.704l72.347-124.682 2.8-1.72c49.257-29.326 73.08 1.117 94.02 40.927z"></path>
+                        </g>
+                    </svg>
+                    Sundown Studio
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="bi bi-speedometer2"></i>
+                        Dashboard
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-grid-3x3-gap"></i>
+                        Cards View
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-list-ul"></i>
+                        List View
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-plus-circle"></i>
+                        Create New
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-pencil-square"></i>
+                        Edit Record
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-person-circle"></i>
+                        Account
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-house"></i>
+                        Back to Home
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="test-content">
+                <h1>Sidebar Theme Test</h1>
+                <p>This page tests the sidebar theme functionality.</p>
+                <p>You should see a blue button in the top-left corner to toggle the sidebar.</p>
+                <p>When you change themes, the sidebar should also change colors smoothly.</p>
+                
+                <div class="test-buttons">
+                    <button onclick="testThemeToggle()">Toggle Theme</button>
+                    <button onclick="testSidebarToggle()">Toggle Sidebar</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./Js/theme.js"></script>
+    <script src="./Js/sidebar.js"></script>
+    <script>
+        function testThemeToggle() {
+            console.log('Testing theme toggle...');
+            if (window.themeManager) {
+                console.log('Theme manager found:', window.themeManager);
+                window.themeManager.toggleTheme();
+            } else {
+                console.log('Theme manager not found');
+            }
+        }
+
+        function testSidebarToggle() {
+            console.log('Testing sidebar toggle...');
+            if (window.sidebarManager) {
+                console.log('Sidebar manager found:', window.sidebarManager);
+                window.sidebarManager.toggleSidebar();
+            } else {
+                console.log('Sidebar manager not found');
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/theme.css">
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-content {
+            margin-top: 100px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-content">
+        <h1>Theme Toggle Test</h1>
+        <p>This page tests the theme toggle functionality.</p>
+        <p>You should see a circular blue button in the top-right corner.</p>
+        <button onclick="testThemeToggle()">Test Theme Toggle</button>
+    </div>
+
+    <script src="./Js/theme.js"></script>
+    <script>
+        function testThemeToggle() {
+            console.log('Testing theme toggle...');
+            if (window.themeManager) {
+                console.log('Theme manager found:', window.themeManager);
+                window.themeManager.toggleTheme();
+            } else {
+                console.log('Theme manager not found');
+                // Manually create theme toggle
+                const toggle = document.createElement('div');
+                toggle.className = 'theme-toggle';
+                toggle.innerHTML = '<i class="bi bi-moon"></i><span>Dark Mode</span>';
+                toggle.id = 'theme-toggle';
+                document.body.appendChild(toggle);
+                console.log('Manually created theme toggle');
+            }
+        }
+    </script>
+</body>
+</html> 
